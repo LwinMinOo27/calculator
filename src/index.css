@@ -4,13 +4,13 @@
 
 @layer components {
   body {
-    @apply bg-[#111] lg:h-screen lg:flex justify-center items-center p-2;
+    @apply bg-[#eee] lg:h-screen lg:flex justify-center items-center p-2;
   }
   .calculator {
     @apply bg-[#5e88c7] max-w-md mx-auto mt-16 p-8 rounded-md shadow-sm shadow-blue-900;
   }
   .output > input {
-    @apply w-full mb-8 text-right p-6 text-3xl bg-[#eee] text-[#333]
+    @apply w-full mb-8 text-right p-6 text-3xl bg-[#eee]
     break-words break-all;
   }
 
