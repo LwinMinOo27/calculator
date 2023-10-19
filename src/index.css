@@ -4,25 +4,24 @@
 
 @layer components {
   body {
-    @apply flex justify-center items-center bg-[#333];
+    @apply bg-[#eee] lg:h-screen lg:flex justify-center items-center p-2;
   }
-  .calculator-grid {
-    @apply bg-[#222] px-4 py-6 rounded-md break-words break-all text-right max-w-sm mx-auto mt-24;
+  .calculator {
+    @apply bg-[#5e88c7] max-w-md mx-auto mt-16 p-8 rounded-md shadow-sm shadow-blue-900;
   }
-  .output {
-    @apply text-white flex justify-end items-center mb-8 p-6 text-4xl h-24 w-full;
+  .output > input {
+    @apply w-full mb-8 text-right p-6 text-3xl bg-white bg-opacity-80 text-[#333]
+    break-words break-all;
   }
+
   .input {
     @apply grid grid-cols-4 gap-4;
   }
+
   button {
-    @apply bg-white bg-opacity-80 p-4 w-20 h-20 text-2xl rounded-full
-    hover:bg-opacity-100;
+    @apply bg-[#fff] p-4 rounded-sm text-2xl outline-none hover:bg-black hover:bg-opacity-50 hover:text-white hover:transition-colors hover:duration-300 flex justify-center items-center;
   }
-  .operator-btn {
-    @apply bg-[#ff8820] bg-opacity-90 text-white hover:bg-opacity-100;
-  }
-  .equal {
-    @apply col-span-2 w-full;
+  .operator {
+    @apply bg-blue-950 bg-opacity-70 text-white hover:bg-opacity-80;
   }
 }

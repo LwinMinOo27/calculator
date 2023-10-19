@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./index.css";
 
 const App = () => {
@@ -8,9 +8,13 @@ const App = () => {
     setResult(result.concat(e.target.id));
   };
 
-  const clear = () => setResult("");
+  const clear = () => {
+    setResult("");
+  };
 
-  const deleteEl = () => setResult(result.slice(0, -1));
+  const deleteEl = () => {
+    setResult(result.slice(0, -1));
+  };
 
   const calculate = () => {
     try {
@@ -21,64 +25,67 @@ const App = () => {
   };
 
   return (
-    <div className="calculator-grid">
-      <div className="output">{result}</div>
+    <div className="calculator">
+      <div className="output">
+        <input type="text" disabled value={result} />
+      </div>
+
       <div className="input">
-        <button className="operator-btn" onClick={clear}>
-          AC
-        </button>
-        <button className="operator-btn" onClick={deleteEl}>
-          DEL
-        </button>
-        <button className="operator-btn" id="." onClick={handleClick}>
+        <button onClick={clear}>AC</button>
+        <button onClick={deleteEl}>DEL</button>
+        <button id="." onClick={handleClick}>
           .
         </button>
-        <button className="operator-btn" id="/" onClick={handleClick}>
+        <button className="operator" id="/" onClick={handleClick}>
           /
         </button>
-        <button onClick={handleClick} id="7">
+
+        <button id="7" onClick={handleClick}>
           7
         </button>
-        <button onClick={handleClick} id="8">
+        <button id="8" onClick={handleClick}>
           8
         </button>
-        <button onClick={handleClick} id="9">
+        <button id="9" onClick={handleClick}>
           9
         </button>
-        <button className="operator-btn" onClick={handleClick} id="*">
+        <button id="*" className="operator" onClick={handleClick}>
           *
         </button>
-        <button onClick={handleClick} id="4">
+
+        <button id="4" onClick={handleClick}>
           4
         </button>
-        <button onClick={handleClick} id="5">
+        <button id="5" onClick={handleClick}>
           5
         </button>
-        <button onClick={handleClick} id="6">
+        <button id="6" onClick={handleClick}>
           6
         </button>
-        <button className="operator-btn" onClick={handleClick} id="-">
+        <button id="-" onClick={handleClick} className="operator">
           -
         </button>
-        <button onClick={handleClick} id="1">
+
+        <button id="1" onClick={handleClick}>
           1
         </button>
-        <button onClick={handleClick} id="2">
+        <button id="2" onClick={handleClick}>
           2
         </button>
-        <button onClick={handleClick} id="3">
+        <button id="3" onClick={handleClick}>
           3
         </button>
-        <button className="operator-btn" onClick={handleClick} id="+">
+        <button id="+" onClick={handleClick} className="operator">
           +
         </button>
-        <button onClick={handleClick} id="00">
+
+        <button id="00" onClick={handleClick}>
           00
         </button>
-        <button onClick={handleClick} id="0">
+        <button id="0" onClick={handleClick}>
           0
         </button>
-        <button className="operator-btn equal" onClick={calculate}>
+        <button className="col-span-2 operator" onClick={calculate}>
           =
         </button>
       </div>
